@@ -19,7 +19,7 @@ function parentIdToCascade(datas, id, pid, rootId, childrenKey) {
     return transform();
     function transform(parentItem) {
         var children = datas.reduceRight(function (target, item, idx) {
-            if (parentItem ? item[pid] == parentItem[id] : item[pid] == rootId) {
+            if (parentItem ? item[pid] == parentItem[id] : item[pid] == rootId||!item[pid]) {
                 [].push.apply(target, datas.splice(idx, 1));
             };
             return target;
