@@ -23,7 +23,7 @@ function parentIdToCascade(datas, id, pid, rootId, childrenKey) {
                 [].push.apply(target, datas.splice(idx, 1));
             };
             return target;
-        }, []);
+        }, []).reverse();
         children.forEach(function (item) {
             transform(item);
         });
